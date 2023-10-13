@@ -1,0 +1,96 @@
+/* Reset default margin, padding, and box-sizing behavior and set the font-family for the entire document. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Style the hero section, including background and text color. */
+.hero {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Center the container within the hero section. */
+.container {
+  width: 800px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+/* Style the clock display within the container. */
+.clock {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8b155;
+  backdrop-filter: blur(140px);
+}
+
+/* Create decorative elements on the container. */
+.container::before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  border-radius: 10px;
+  left: -50px;
+  top: -50px;
+  z-index: -1;
+  background: #58d1e4;
+}
+
+.container::after {
+  content: "";
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  border-radius: 50%;
+  right: -50px;
+  bottom: -50px;
+  z-index: -1;
+  background: #db57ed;
+}
+
+/* Style the clock digits and labels. */
+.clock span {
+  font-size: 80px;
+  width: 110px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+/* Add labels ("HOURS," "MIN," "SEC") below the clock digits. */
+.clock span::after {
+  font-size: 16px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* Content for the label below the hours. */
+#hrs::after {
+  content: "HOURS";
+}
+
+/* Content for the label below the minutes. */
+#min::after {
+  content: "MIN";
+}
+
+/* Content for the label below the seconds. */
+#sec::after {
+  content: "SEC";
+}
